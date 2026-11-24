@@ -218,5 +218,3 @@ More commands, including running the rate-limit logic by hand in the shell, are 
 - **Single-document atomicity:** keeping all of a client's hits in one document is what makes the update atomic without transactions or locks. Very large limits would push toward MongoDB's 16 MB document size limit.
 - **Fail open vs. fail closed:** failing open keeps the API available during a database outage but temporarily disables protection. Change the `except PyMongoError` branch in `main.py` to return a 503 if you prefer fail closed.
 - **Blocking driver:** pymongo is synchronous, so the check runs in a thread pool (`run_in_threadpool`) to avoid blocking the event loop.
-## GitHub link
-https://github.com/Abantikasen11/Rate-limiter
